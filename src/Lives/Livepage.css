@@ -54,6 +54,13 @@ body html{
   margin: 5px;
   top: 20px;
 }
+.player{
+  height: auto;
+  width: auto;
+
+}
+
+
 .btnfooter{
  
   background-color: #4d0d96;

@@ -5,45 +5,59 @@ import { useParams } from 'react-router-dom';
 import screenfull from 'screenfull';
 import useFetch from '../Hook/UseFetch';
 import './Livepage.css';
+
+import ReactPlayer from 'react-player'
+
 import m3u from '../svg/tvlist.m3u'
 // import {ReactFlvPlayer} from 'react-flv-player'
 import useWindowDimensions from "../Hook/useWindowDimensions";
-
+import Player from '../Player';
 const Livepage = () => {
   const [hls , sethls] = useState()
   const [showopt , setShowopt] = useState(true);
   const {id} = useParams()
 const{hometeam} = useParams()
 const{awayteam} = useParams()
-const {Data:channel} = useFetch(`https://soccer-data.vercel.app/GetChannel/${id}/${hometeam}/${awayteam}`)
+const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${hometeam}/${awayteam}`)
   
 
   
 
-    useEffect(()=>{
-        const src = {
-            hls: 'https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8'
-          };
-          var settings = {
-            timeout: 12000,
-            licenseKey: 'Kl8lYz0wN3o9NjJjczl2P3JvbTVkYXNpczMwZGIwQSVfKg==',
-            iframeMode: true,
-            iframeAllowed: true,
-            autoplay: false,
-            sharing: false,
-            skin: 's3',
-            src: src,
-            pip: false,
-            logoPosition: 'bottom',
-            logoWatermark: 'false',
-            mute: 'false',
-            isLive: true,
-            gaEvents: ['context', 'ready', 'playerstart', 'error', 'adimpression', 'adloadererror', 'aderror']
-        };
-          const elementID = 'rmp';
-          const rmp = new window.RadiantMP(elementID);
-          rmp.init(settings);
-    })
+//     useEffect(()=>{
+//         const src = {
+//             hls: 'https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8'
+//           };
+//           var settings = {
+//             timeout: 12000,
+//             licenseKey: 'Kl8lYz0wN3o9NjJjczl2P3JvbTVkYXNpczMwZGIwQSVfKg==',
+//             iframeMode: true,
+//             iframeAllowed: true,
+//             autoplay: false,
+//             sharing: false,
+//             skin: 's3',
+//             src: src,
+//             pip: false,
+//             logoPosition: 'bottom',
+//             logoWatermark: 'false',
+//             mute: 'false',
+//             isLive: true,
+//             gaEvents: ['context', 'ready', 'playerstart', 'error', 'adimpression', 'adloadererror', 'aderror']
+//         };
+//           const elementID = 'rmp';
+//           const rmp = new window.RadiantMP(elementID);
+
+//           const rmpContainer = document.getElementById(elementID);
+// rmpContainer.addEventListener('ready', () => {
+//   console.log('player ready');
+//   // Invoke API methods
+//   console.log(rmp.getStreamType());
+// });
+// rmpContainer.addEventListener('playing', () => {
+//   console.log('player has received playing event');
+//   rmp.setBitrate(0);
+// });
+//           rmp.init(settings);
+//     })
    
     const {width,heigth} = useWindowDimensions();
     
@@ -93,12 +107,10 @@ const {Data:channel} = useFetch(`https://soccer-data.vercel.app/GetChannel/${id}
            
            </div>
 
-      <div id="rmp"></div>
-    
-    {/* <ReactFlvPlayer
-    url = "https://pull-f5-va01.tiktokcdn.com/game/stream-2994397616979050584_or4.flv">
+           <ReactPlayer width={"100%"} height={"100%"} className="player"  playing={true} url='https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8' />
 
-    </ReactFlvPlayer> */}
+    
+   
   <div className="header">
             <div className="tithead">
             <h2 className='r'  style={{textAlign:'right'}}>بث مباشر اون تايم سبورت 1 كورة لايف</h2>

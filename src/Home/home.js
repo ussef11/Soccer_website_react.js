@@ -22,7 +22,7 @@ const HomePage = () => {
     Data: matches,
     ispending,
     errormsg,
-  } = useFetch("https://soccer-data.vercel.app/");
+  } = useFetch("http://localhost:3001/");
 
   
   const clickhandler = (e) => {

@@ -1,4 +1,4 @@
-import React ,{Component} from "react";
+import React ,{Component, useEffect} from "react";
 
 class player extends Component{
 
@@ -10,25 +10,43 @@ class player extends Component{
         const src = {
             hls: 'https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8'
           };
-          var settings = {
-            timeout: 12000,
-            licenseKey: 'Kl8lYz0wN3o9NjJjczl2P3JvbTVkYXNpczMwZGIwQsSVfKg==',
-            iframeMode: true,
-            iframeAllowed: true,
-            autoplay: false,
-            sharing: false,
-            skin: 's3',
-            src: src,
-            pip: false,
-            logoPosition: 'bottom',
-            logoWatermark: 'false',
-            mute: 'false',
-            isLive: true,
-            gaEvents: ['context', 'ready', 'playerstart', 'error', 'adimpression', 'adloadererror', 'aderror']
+          var streamrootConfig = {
+            type: 'hlsjs',
+            streamrootKey: 'demoswebsiteandpartners',
+            dnaConfig: {},
         };
-           const elementID = 'rmp';
-           const rmp = new window.RadiantMP(elementID);
-           rmp.init(settings);
+          var settings = {
+            licenseKey: 'Kl8lMD1pZ2N2MDIwN292PWlvZWU3MnNlP3JvbTVkYXNpczMwZGIwQSVfKg==',
+                streamrootConfig: streamrootConfig,
+                src: src,
+                // Recommended settings for HLS streaming
+                hlsJSMaxBufferSize: 0,
+                hlsJSMaxBufferLength: 30,
+                hlsJSLiveSyncDuration: 30, // Not needed for VoD streams
+                forceHlsJSOnMacOSIpadOSSafari: true, //To activate Streamroot on Safari Mac OS. Only from player 5.4.10+.
+                delayToFade: 3000,
+              
+                muted: true,
+                autoplay: true,
+        };
+          const elementID = 'rmp';
+          const rmp = new window.RadiantMP(elementID);
+
+          const rmpContainer = document.getElementById(elementID);
+rmpContainer.addEventListener('ready', () => {
+  console.log('player ready');
+  // Invoke API methods
+  console.log(rmp.getStreamType());
+});
+rmpContainer.addEventListener('playing', () => {
+  console.log('player has received playing event');
+  rmp.setBitrate(0);
+});
+          rmp.init(settings);
+ 
+   
+    
+     
     }
 }
 
