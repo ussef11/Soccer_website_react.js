@@ -12,18 +12,29 @@ const Login = () => {
 
     const handlesubmit = (e)=>{
       e.preventDefault();
+         if(username == "youssef" && password == "123456789"){
+          sessionStorage.setItem("login", username)
+          sessionStorage.setItem("password", password)
+          let  logi = sessionStorage.getItem("login")
+          window.location.replace("https://soccer-website-react-js-5yq3.vercel.app/admin");
+          console.log(logi)
 
-    authService.login(username, password).then((res)=>{
+          setMessage("Login good")
+         }else{
+          setMessage("Login Not Good")
+         }
+    
+    // authService.login(username, password).then((res)=>{
      
       
-      navigate("/");
-      window.location.reload();
-    }).catch((err)=>{
-      setSeccussful(true)
-      setMessage(err.response.data.message)
-      console.log(err.response.data.message)
+    //   navigate("/");
+    //   window.location.reload();
+    // }).catch((err)=>{
+    //   setSeccussful(true)
+    //   setMessage(err.response.data.message)
+    //   console.log(err.response.data.message)
       
-    })
+    // })
 
   }
 

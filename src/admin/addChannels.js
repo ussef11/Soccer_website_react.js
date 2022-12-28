@@ -7,6 +7,8 @@ import authHeader from '../Services/auth-header';
 import authService from '../Services/auth.service';
 import "./admin.css";
 import { Alert } from "@mui/material";
+import { useEffect } from "react";
+import { textAlign } from "@mui/system";
 const AddChannels = () => {
   const [channel, setchannel] = useState();
   const [channelid, setchannelid] = useState();
@@ -65,6 +67,13 @@ const AddChannels = () => {
   
   // })
   };
+  const [islogin ,  setislogin] = useState(false)
+  const logi = sessionStorage.getItem("login")
+  useEffect(()=>{
+    if(logi){
+      setislogin(true)
+    }
+  })
 
   const {
     Data: matches,
@@ -75,6 +84,7 @@ const AddChannels = () => {
   console.log(channelid);
 
   return (
+    <div className="te">   {  islogin ?
     <div className="addchannel">
       <h1 className="title">Add Channels</h1>
       <form className="form" onSubmit={handlesubmite}>
@@ -151,6 +161,7 @@ const AddChannels = () => {
         </div>
       </form>
     </div>
+    :  <div> <h1 style={{textAlign:"center" , color:"white"}}>Please LogIn</h1> </div>} </div>
   );
 };
 

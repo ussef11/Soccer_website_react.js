@@ -40,20 +40,27 @@ const Navbar = () => {
         }    
     }
     const user =  authServices.getCurrentUser();
+    const logi = sessionStorage.getItem("login")
 useEffect(()=>{
 
     if(user){
         setShowAdminBoard(user.roles.includes("ROLE_ADMIN"))
         SetCurrentUser(user)
     }
+
+    if(logi){
+        setShowAdminBoard(true)
+    }
 },[1])
   
 
     const logoutSubmite = ()=>{
-        authServices.logout().then(()=>{
-            setShowAdminBoard(false)
-            SetCurrentUser(undefined)
-        })
+        // authServices.logout().then(()=>{
+        //     setShowAdminBoard(false)
+        //     SetCurrentUser(undefined)
+        // })
+        sessionStorage.clear();
+        window.location.reload();
     }
 
 
