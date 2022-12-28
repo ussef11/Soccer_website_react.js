@@ -60,6 +60,29 @@ body html{
 
 }
 
+.playimg{
+  width: 43px;
+  cursor: pointer;
+}
+
+.buttons{
+  position: relative;
+  display: flex;
+  top: -45px;
+  background-color: #eda84c00;
+  border-radius: 8px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.imgscreen{
+  cursor: pointer;
+  margin-left: auto;
+  height: 37px;
+  position: relative;
+  top: 3px;
+  width: 42px;
+}
+
 
 .btnfooter{
  

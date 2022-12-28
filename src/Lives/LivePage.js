@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect ,useState} from 'react';
+import { useEffect ,useState , useRef} from 'react';
 
 import { useParams } from 'react-router-dom';
 import screenfull from 'screenfull';
@@ -7,7 +7,9 @@ import useFetch from '../Hook/UseFetch';
 import './Livepage.css';
 
 import ReactPlayer from 'react-player'
-
+import playimg from '../svg/play.png'
+import pauseimg from '../svg/pause.png'
+import screen from '../svg/screen.png'
 import m3u from '../svg/tvlist.m3u'
 // import {ReactFlvPlayer} from 'react-flv-player'
 import useWindowDimensions from "../Hook/useWindowDimensions";
@@ -58,8 +60,21 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
 // });
 //           rmp.init(settings);
 //     })
-   
+   const [play , setplay] = useState(false)
     const {width,heigth} = useWindowDimensions();
+
+
+    const pla = useRef(null)
+
+    const handlefullscreen = ()=>{
+      if(screenfull.isEnabled){
+        screenfull.request(pla.current.wrapper)
+      }
+            
+    }
+
+
+
     
     useEffect(()=>{
       if(width <= 600){
@@ -107,9 +122,19 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
            
            </div>
 
-           <ReactPlayer width={"100%"} height={"100%"} className="player"  playing={true} url='https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8' />
+           <div  className="player"> 
 
-    
+           <ReactPlayer ref={pla}  width={"100%"} height={"100%"}  playing={play} url='https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8' />
+           
+           <div className="buttons">
+             <img onClick={()=>{ play == true ? setplay(false) : setplay(true)}} className='playimg' src={ play ? pauseimg :  playimg} />
+             <img className='imgscreen' onClick={handlefullscreen} src={screen} />
+             {/* <img className='playimg' src={playimg} />
+             <img className='playimg' src={playimg} /> */}
+           </div>
+           
+           </div>
+          
    
   <div className="header">
             <div className="tithead">
