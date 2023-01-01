@@ -72,9 +72,9 @@ useEffect(()=>{
     return ( 
         <div className="nav"> 
         <nav className="navbar">
-        <div className="content">
+        <div style={{height:'69px'}} className="content">
             <div className="title">
-                 <Link  style={{textDecoration:'none' , color:'wheat'}} to="/"> <img  src={Tawfik} /> </Link>
+                 <Link  style={{textDecoration:'none' , color:'wheat'}} to="/"> <img className="logoimg"  src={Tawfik} /> </Link>
             </div>
           {showopt ? <div  className="navopt">
           <Link  className="a" to="/">Home</Link>
