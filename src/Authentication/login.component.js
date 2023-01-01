@@ -3,6 +3,8 @@ import axios, * as others from 'axios';
 import { useNavigate } from 'react-router-dom';
 import authService from '../Services/auth.service';
 import './login.css'
+import { Helmet } from 'react-helmet-async';
+
 const Login = () => {
     const [username ,  setusername] = useState();
     const [password ,  setpassword] = useState();
@@ -58,7 +60,19 @@ const Login = () => {
 //       )
 //       .catch(error => alert('error', error));
 
-    return ( 
+    return (
+      <> 
+      <Helmet>  
+<meta
+      name="description"
+    
+      content="كورة لايف,koora live,مشاهدة مباريات اليوم بث مباشر,live koora,بدون تقطيع عبر موقع كوره لايف,koora live 96,اون لاين,kooralive,لنقل المباريات لايف,koora live tv,لايف كورة,kora live"
+
+      data-rh="true"
+    />
+    <title>TawfikShoot - Login</title>
+    <link rel="canonical" href="/Login" />
+</Helmet>
 
       <div className="login"> 
       <div style={{textAlign:'center'}} className="title">
@@ -70,6 +84,7 @@ const Login = () => {
         <input className='button' type="submit" value='LOGIN' />
         </form>
         </div>
+        </>
      );
 }
  

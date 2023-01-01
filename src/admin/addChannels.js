@@ -9,6 +9,8 @@ import "./admin.css";
 import { Alert } from "@mui/material";
 import { useEffect } from "react";
 import { textAlign } from "@mui/system";
+import { Helmet } from 'react-helmet-async';
+
 const AddChannels = () => {
   const [channel, setchannel] = useState();
   const [channelid, setchannelid] = useState();
@@ -84,6 +86,18 @@ const AddChannels = () => {
   console.log(channelid);
 
   return (
+<> 
+    <Helmet>  
+    <meta
+          name="description"
+        
+          content="كورة لايف,koora live,مشاهدة مباريات اليوم بث مباشر,live koora,بدون تقطيع عبر موقع كوره لايف,koora live 96,اون لاين,kooralive,لنقل المباريات لايف,koora live tv,لايف كورة,kora live"
+    
+          data-rh="true"
+        />
+        <title>TawfikShoot - AddChannel</title>
+        <link rel="canonical" href="/AddChannel" />
+    </Helmet>
     <div className="te">   {  islogin ?
     <div className="addchannel">
       <h1 className="title">Add Channels</h1>
@@ -162,6 +176,8 @@ const AddChannels = () => {
       </form>
     </div>
     :  <div> <h1 style={{textAlign:"center" , color:"white"}}>Please LogIn</h1> </div>} </div>
+
+</>
   );
 };
 

@@ -45,6 +45,13 @@ background-color: rgb(19, 19, 19);
     padding: 5px;
 
   }
+
+  .logoimg{
+        width: 200px;
+    position: relative;
+    top: 22px;
+    left: -9px;
+  }
   .a:hover{
     color: brown;
   }

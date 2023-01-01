@@ -7,6 +7,7 @@ import close from '../svg/close.svg'
 import login from '../svg/login.svg'
 import logout from '../svg/logout.svg'
 import authServices from "../Services/auth.service";
+import Tawfik from "../svg/tawfik.png"
 
 
 const Navbar = () => {
@@ -73,7 +74,7 @@ useEffect(()=>{
         <nav className="navbar">
         <div className="content">
             <div className="title">
-                <h1 className="logo"> <Link  style={{textDecoration:'none' , color:'wheat'}} to="/">  Bermuda</Link></h1>
+                 <Link  style={{textDecoration:'none' , color:'wheat'}} to="/"> <img  src={Tawfik} /> </Link>
             </div>
           {showopt ? <div  className="navopt">
           <Link  className="a" to="/">Home</Link>

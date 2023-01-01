@@ -14,6 +14,7 @@ import m3u from '../svg/tvlist.m3u'
 // import {ReactFlvPlayer} from 'react-flv-player'
 import useWindowDimensions from "../Hook/useWindowDimensions";
 import Player from '../Player';
+import { Helmet } from 'react-helmet-async';
 const Livepage = () => {
   const [hls , sethls] = useState()
   const [showopt , setShowopt] = useState(true);
@@ -64,6 +65,8 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
     const {width,heigth} = useWindowDimensions();
 
 
+    let url = "https://video-weaver.mad01.hls.live-video.net/v1/playlist/CpsFOpWZU1FG6HLESy9Rx6f8qgO8In8iLOI6TfHsqy_eF6SInmY3zCRNwsSj5XZapgOPXCB0Yh3G18r_HwxZPpeFu-kuCF9ts2-pHkn7HnIDFng8LhAG0Cb91qcK0ZGxY-MRCj5qvwDvbqo0wMvtuRgajPmBKbgFYQvaCN4s-NOJ9DlheuHI_cOf99ktUApsFmBd0fH_43-BKeJ95HSvkS4RgTqprG4YbIjsRHy28dNHQI3nbHWNoLq47nV_7G0ex1CSqOz3HTf0T69ghir4rCLZEIYB4xJDmifqepB4PLecdZ9O3ITWtGzWitHI9skCUvusZmuTW95_wi-UJW_qIUk8juoSYSA7MZHF_OwuTvBhCKs-WU4wOqBn59fw4z19D-oqvMNLipFunql8r-adc2rAK573nJY12A-JQOownnKL8vwrPsKoxVC-IgJS-0PzCgsLCeWFIH7cSuPWgi-hi5wEucEo6MFcvJAohOulrilaNSjsKhH1kEMD3uwjVMkpSwhv5S2uea56ee8EobDIGCRaKTm2EhyNztAHvHGTQG0KznhYffH91177JJAStJw1S8i9x9jDuux-GU9H_r7IU3W406VxD0psJP2llEHiymRb7WvFJ91rHR-UYV_3OT6Mhxt1-AHq4jcn0eqBHdlxOMkvVfPSj7-ascpIeqlRdpx1KJRkBD3xCH5ToeHp8ms_jNKZ_qn5F54aZwMu_3y5o8LrPZnVgaliRiyAFCyp37wNCekwFo9jy3j4yYKbyVo1zHfVW30XMNYQuF4v0TqRjFgO7eAHzmhD43mNQm-kJTpFnUitnsr4zJL7bC-WtDu5r6cKMpNC-QHqVvfrWV2vf87D3DBvLKfs4V1fP7DP2_9FxHS-ldQs9Pz2-eDF8xoM8pggg4LSSOWOVkq1IAEqCWV1LXdlc3QtMjDDBQ.m3u8"
+    // let url2 ='https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8'
     const pla = useRef(null)
 
     const handlefullscreen = ()=>{
@@ -89,6 +92,19 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
 
 
     return (  
+      <>
+<Helmet>  
+<meta
+      name="description"
+    
+      content="كورة لايف,koora live,مشاهدة مباريات اليوم بث مباشر,live koora,بدون تقطيع عبر موقع كوره لايف,koora live 96,اون لاين,kooralive,لنقل المباريات لايف,koora live tv,لايف كورة,kora live"
+
+      data-rh="true"
+    />
+    <title>TawfikShoot - LIVE</title>
+    <link rel="canonical" href="/live" />
+</Helmet>
+
       <div className="all" >  <div className="livepage"> <div className="titdiv">   <p className='tit'>{hometeam} ضد {awayteam} بث مباشر مباراة  </p>  
       {channel&&channel.map((data)=>( 
         <h1 className='tit'>{data.ChannelName}</h1>      
@@ -124,7 +140,7 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
 
            <div  className="player"> 
 
-           <ReactPlayer ref={pla}  width={"100%"} height={"100%"}  playing={play} url='https://dmitwlvvll.cdn.mangomolo.com/dubaisportshd/smil:dubaisportshd.smil/chunklist_b1600000.m3u8' />
+           <ReactPlayer ref={pla}  width={"100%"} height={"100%"}  playing={play} url={url} />
            
            <div className="buttons">
              <img onClick={()=>{ play == true ? setplay(false) : setplay(true)}} className='playimg' src={ play ? pauseimg :  playimg} />
@@ -205,6 +221,7 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
         
 
         </div>  </div ></div>
+        </>
     );
 }
  

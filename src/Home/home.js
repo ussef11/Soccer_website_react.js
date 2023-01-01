@@ -37,13 +37,6 @@ const HomePage = () => {
   },2500)
 
 
-
-//  console.log(click)
-
-
-
- 
-
   return (
     <div className="home">
       <div className="Homecontent">
