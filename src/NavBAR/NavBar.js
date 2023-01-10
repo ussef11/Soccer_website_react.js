@@ -80,6 +80,7 @@ useEffect(()=>{
           <Link  className="a" to="/">Home</Link>
                 {/* <Link className="a" to="/test">TEST</Link> */}
                 {showadminBoard &&   <Link className="a" to="/add/">Add channel</Link> }  
+                {showadminBoard &&   <Link className="a" to="/AddArticles/">Add Articles</Link> }  
                 {/* <Link className="a" to="/Live/">Live</Link> */}
                 { !showadminBoard &&        <Link className="a" to="/Register/">Register</Link>}
                 { !showadminBoard &&   <Link className="a" to="/Login/">Login</Link> }
@@ -93,6 +94,7 @@ useEffect(()=>{
                 <li> <Link className="a" to="/">Home</Link></li>
                 {/* <li> <Link className="a" to="/test">TEST</Link></li> */}
                 {showadminBoard &&   <li> <Link className="a" to="/add/">Add channel</Link></li> }  
+                {showadminBoard &&   <Link className="a" to="/AddArticles/">Add Articles</Link> }  
                 {/* <li> <Link className="a" to="/Live/">Live</Link></li> */}
                 { !showadminBoard &&   <li> <Link className="a" to="/Register/">Register</Link></li>}
                 { !showadminBoard &&   <li> <Link className="a" to="/Login/">Login <img style={{width:"23px",position:'relative' , top:'7px'}} src={logout} /> </Link></li> }

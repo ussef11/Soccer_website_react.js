@@ -8,6 +8,8 @@ import LivePage from './Lives/LivePage'
 import  Register from './Authentication/register.component'
 import Login from "./Authentication/login.component";
 import Admin from './Authentication/Admin.component'
+import AddContent from './AddContent/AddContent'
+import AddArticles from './AddContent/AddArticles'
 function App() {
   return (
     <div className="App">
@@ -21,6 +23,8 @@ function App() {
      <Route path="/Register" element={<Register/>} ></Route>
      <Route path="/Login" element={<Login/>} ></Route>
      <Route path="/admin" element={<Admin/>} ></Route>
+     <Route path="/AddContent/:id" element={<AddContent/>} ></Route>
+     <Route path="/AddArticles" element={<AddArticles/>} ></Route>
   </Routes>
   </BrowserRouter>
     </div>

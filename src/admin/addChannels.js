@@ -96,7 +96,7 @@ const AddChannels = () => {
           data-rh="true"
         />
         <title>TawfikShoot - AddChannel</title>
-        <link rel="canonical" href="/AddChannel" />
+        <link rel="canonical" href="/admin" />
     </Helmet>
     <div className="te">   {  islogin ?
     <div className="addchannel">

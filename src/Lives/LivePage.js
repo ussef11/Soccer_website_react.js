@@ -140,7 +140,10 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
 
            <div  className="player"> 
 
-           <ReactPlayer ref={pla}  width={"100%"} height={"100%"}  playing={play} url={url} />
+        { channel&& channel.map((data)=>(
+                 <ReactPlayer ref={pla}  width={"100%"} height={"100%"}  playing={play} url={data.linkchaine} />
+
+        )) }
            
            <div className="buttons">
              <img onClick={()=>{ play == true ? setplay(false) : setplay(true)}} className='playimg' src={ play ? pauseimg :  playimg} />

@@ -1,0 +1,86 @@
+.rdw-option-wrapper img{
+    width: 17px;
+}
+
+.demo-editor{
+    background-color: white;
+    height: 400px;
+}
+
+.rdw-dropdown-selectedtext span{
+    font-size: 16px;
+    color: black;
+    position: relative;
+    bottom: 6px;
+  } 
+
+  .public-DraftStyleDefault-block span{
+    color: black;
+  }  
+
+  .rdw-editor-main {
+    height: 500px;
+
+}
+
+
+form{
+  justify-content: center;
+  display: grid;
+}
+
+.inpfile{
+  width: 245px;
+  height: 34px;
+  color: white;
+}
+
+.percent{
+  color: white;
+}
+
+.btnupload{
+  cursor: pointer;
+  border: navajowhite;
+  background-color: #ffffff;
+  /* border-style: solid; */
+  /* border-width: 2px; */
+  width: 138px;
+  margin: 25px;
+  height: 29px;
+  border-radius: 11px;
+  font-weight: 500;
+  font-size: 17px;
+  font-family: cursive
+}
+
+.divupload{
+  position: relative;
+    top: -38px;
+}
+
+
+.int {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  margin: 25px;
+  height: 38px;
+  border-radius: 4px;
+  width: 68vw;
+}
+
+.imgcover{
+  height: 193px;
+  width: 295px;
+}
+
+.getcontenti{
+  color: white;
+  cursor: pointer;
+}

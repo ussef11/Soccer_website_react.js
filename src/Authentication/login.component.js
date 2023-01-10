@@ -18,7 +18,7 @@ const Login = () => {
           sessionStorage.setItem("login", username)
           sessionStorage.setItem("password", password)
           let  logi = sessionStorage.getItem("login")
-          window.location.replace("https://soccer-website-react-js-5yq3.vercel.app/admin");
+          window.location.replace("http://localhost:3000/");
           console.log(logi)
 
           setMessage("Login good")
