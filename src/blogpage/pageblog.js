@@ -10,7 +10,7 @@ const Blogpage = () => {
 
     const {id} = useParams()
     const {title} = useParams()
-    const {Data:blog} = useFetch(`http://localhost:3001/getContent/${id}`);
+    const {Data:blog} = useFetch(`https://soccer-data.vercel.app/getContent/${id}`);
 
     return ( 
         <>
