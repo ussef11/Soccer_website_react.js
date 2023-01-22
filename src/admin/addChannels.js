@@ -44,7 +44,7 @@ const AddChannels = () => {
     e.preventDefault();
 
     const allform = {linkchaine:linkchaine, MatchId:channelid, ChannelName :channel}
-    fetch('http://localhost:3001/AddChannelA',
+    fetch('https://soccer-data.vercel.app/AddChannelA',
        {
         method :'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -81,7 +81,7 @@ const AddChannels = () => {
     Data: matches,
     ispending,
     errormsg,
-  } = useFetch("http://localhost:3001/");
+  } = useFetch("https://soccer-data.vercel.app/");
 
   console.log(channelid);
 
