@@ -75,10 +75,25 @@
     border-radius: 24px;
 }
 
-img{
+.img1 img{
     width: 76px;
 
 }
+.lineimg{
+    width: 76px;
+
+}
+
+.play{
+    width: 76px;
+
+}
+
+/* .vertical img{
+    width: 76px;
+
+} */
+
 .homeTeam{
     width: 40%;
     margin-right: auto;
@@ -307,7 +322,7 @@ color: rgb(255 111 35);
     width: 32px;
     height: 39px;
     background-repeat: no-repeat;
-    background-color: #131313;
+    background-color: rgb(36, 36, 27);
     border: none;
 }
 

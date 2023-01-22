@@ -10,9 +10,17 @@ import Login from "./Authentication/login.component";
 import Admin from './Authentication/Admin.component'
 import AddContent from './AddContent/AddContent'
 import AddArticles from './AddContent/AddArticles'
+import Blogs from './displayblogs/blogs'
+import Blogpage from './blogpage/pageblog'
+import Footer from './footer/footer'
+import Publish from './aboutpages/publishwithus'
+import Privacy from './aboutpages/privacy'
+import Callus from './aboutpages/callus'
+import DeleteArticle from './updateArticles/deleteArticles'
+
 function App() {
   return (
-    <div className="App">
+    <div style={{backgroundColor:"#24241b"}} className="App">
   <BrowserRouter>
   <Navbar/>
   <Routes>
@@ -25,7 +33,14 @@ function App() {
      <Route path="/admin" element={<Admin/>} ></Route>
      <Route path="/AddContent/:id" element={<AddContent/>} ></Route>
      <Route path="/AddArticles" element={<AddArticles/>} ></Route>
+     <Route path="/Blogs" element={<Blogs/>} ></Route>
+     <Route path="/Blogpage/:id/:title" element={<Blogpage/>} ></Route>
+     <Route path="/DMCA" element={<Publish/>} ></Route>
+     <Route path="/privacy-policy" element={<Privacy/>} ></Route>
+     <Route path="/contact-us" element={<Callus/>} ></Route>
+     <Route path="/DeleteArticle" element={<DeleteArticle/>} ></Route>
   </Routes>
+<Footer/>
   </BrowserRouter>
     </div>
   );

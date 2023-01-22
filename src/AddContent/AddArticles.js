@@ -21,6 +21,7 @@ const AddArticles = () => {
   let id_articles = id + 1;
   const articles = { id_articles, title, creator, createdate , articleimg };
   const Submithandler = (e) => {
+    e.preventDefault();
     fetch("http://localhost:3001/AddArticles", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -28,6 +29,7 @@ const AddArticles = () => {
     })
       .then((res) => {
         console.log(res.text());
+        window.location.replace(`http://localhost:3000/AddContent/${id_articles}`)
       })
       .catch((err) => {
         console.log(err);
@@ -69,7 +71,7 @@ const AddArticles = () => {
       <h1 style={{color:'white'}}>Add Articles</h1>
 
       <div className="divinfo">
-        <form action={`AddContent/${id_articles}`} encType="multipart/form-data"  onSubmit={Submithandler}>
+        <form encType="multipart/form-data"  onSubmit={Submithandler}>
           <input
             className="int"
             placeholder="title"

@@ -13,7 +13,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import Carousel from "react-material-ui-carousel";
 import Cover from "./cover";
 import { Link } from "react-router-dom";
-
+import Blogs from '../displayblogs/blogs'
+import loading from '../svg/loading.gif'
 const HomePage = () => {
   const [date, setdate] = useState();
   const [color, setcolor] = useState(0);
@@ -41,8 +42,8 @@ const HomePage = () => {
     <div className="home">
       <div className="Homecontent">
       
-      {/* autoPlay={false} */}
-        <Carousel autoPlay={false}>
+   { ispending ? <div> <img style={{padding:"17px"}} src={loading}  />   </div> :  <div>
+        <Carousel autoPlay={true}>
           {matches &&
             matches.map((data) => (
               <div className="cover">
@@ -240,8 +241,10 @@ const HomePage = () => {
             </Link>
          
           ))}
+       
         </div>
-
+        </div>}
+        <Blogs/>
 
       </div>
     </div>

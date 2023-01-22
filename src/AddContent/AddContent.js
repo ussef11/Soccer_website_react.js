@@ -149,7 +149,7 @@ handlegetcontent(e) {
         />
         <form onSubmit={this.Onsubmithandler} method='POST'>
         <textarea
-          disabled
+          
  style={{color:"black"}}
           value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
           onChange={this.handleChange}

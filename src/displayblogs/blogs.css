@@ -1,0 +1,84 @@
+.titlehead{
+    justify-content: right;
+    text-align: left;
+    display: flex;
+    background-color: #eceef2;
+    
+}
+.blg{
+    background-color: white;
+    border-radius: 9px;
+    box-shadow: 1px 1px 10px 3px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 1px 10px 3px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 1px 10px 3px rgba(255,255,255,0.75);
+}
+.headblogs{
+    margin-bottom: 23px;
+}
+
+.h2{
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    background-color: #878787;
+   
+    text-align: center;
+    margin-right: 2px;
+    font-size: 21px;
+    font-family: Neo Sans Arabic,Segoe UI-MONOSPACE
+}
+
+.blog{
+    margin-top: -3px;
+    background-color: #eceef2;
+    margin-right: -57px;
+    width: 276px;
+    border-radius: 17px;
+    margin-left: 78px;
+
+}
+.bolgimg{
+    border-top-right-radius: 17px;
+    border-top-left-radius: 17px;
+    border-top: 13px;
+    width: 276px;
+    height: 193px;
+}
+
+.title{
+    color: #2f2929;
+    /* background-color: azure; */
+    width: 266px;
+    font-size: 19px;
+    font-weight: 900;
+    text-align: end;
+    margin: 0px;}
+
+.ptitle:hover{
+    color: #2869ff;
+}
+
+.blogs{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    left: -67px;
+}
+
+/* .aboutus{
+   
+} */
+
+
+
+
+.paraaboutus {
+    text-align: right;
+    font-family: Neo Sans Arabic,Changa,Segoe UI;
+    line-height: 1.5;
+    padding: 2%;
+    font-weight: 600;
+}
+

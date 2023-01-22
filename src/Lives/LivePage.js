@@ -105,11 +105,11 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
     <link rel="canonical" href="/live" />
 </Helmet>
 
-      <div className="all" >  <div className="livepage"> <div className="titdiv">   <p className='tit'>{hometeam} ضد {awayteam} بث مباشر مباراة  </p>  
+       <div className="livepage"> <div className="titdiv">   <p className='tit'>{hometeam} ضد {awayteam} بث مباشر مباراة  </p>  
       {channel&&channel.map((data)=>( 
         <h1 className='tit'>{data.ChannelName}</h1>      
            ))}    </div> 
-        <div className='playerDiv'>
+        <div className='playermyDiv'>
           <div className="header">
             <div className="tithead">
             <h2 className='r'  style={{textAlign:'right'}}>بث مباشر اون تايم سبورت 1 كورة لايف</h2>
@@ -141,7 +141,7 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
            <div  className="player"> 
 
         { channel&& channel.map((data)=>(
-                 <ReactPlayer ref={pla}  width={"100%"} height={"100%"}  playing={play} url={data.linkchaine} />
+                 <ReactPlayer ref={pla}  width={"100%"} height={"100%"}  playing={play} url={data.linkchaine ==null ? "https://youtu.be/BnZJWbOy0Fk"   : data.linkchaine } />
 
         )) }
            
@@ -163,39 +163,33 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
             </div>
 
             {showopt ? 
-             <div className='btndivfooter'>
-             <div className="btnfooter">
-              <a className='afooter'>
-               #beinSport 1 max
-             </a> 
-             </div>
-             <div className="btnfooter">
-              <a className='afooter'>
-              #beinSport 2 max
-             </a> 
-             </div>
-             <div className="btnfooter">
-              <a className='afooter'>
-                #beinSport 3 max
-             </a> 
-             </div>
-             <div className="btnfooter">
-              <a className='afooter'>
-              #beinSport 4 max
-             </a> 
-             </div>
-             <div className="btnfooter">
-              <a className='afooter'>
-              #beinSport 5 max
-             </a> 
-             </div>
-             <div className="btnfooter">
-             <a className='afooter'>
-              #beinSport 6 max
-             </a> 
-             </div>
-            
-            </div> :
+                <div className='btndivfooter'>
+                <div  className="btnfootermb">
+                 <a className='afooter'>
+                  #beinSport 1 max
+                </a> 
+                </div>
+                <div className="btnfootermb">
+                 <a className='afooter'>
+                 #beinSport 2 max
+                </a> 
+                </div>
+                <div className="btnfootermb">
+                 <a className='afooter'>
+                   #beinSport 4 max
+                </a> 
+                </div>
+                <div className="btnfootermb">
+                 <a className='afooter'>
+                   #beinSport 5 max
+                </a> 
+                </div>
+               
+                
+               
+               
+               </div>
+             :
              <div className='btndivfooter'>
              <div  className="btnfootermb">
               <a className='afooter'>
@@ -223,7 +217,7 @@ const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${homete
              </div>
         
 
-        </div>  </div ></div>
+        </div>  </div >
         </>
     );
 }

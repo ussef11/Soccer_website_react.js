@@ -5,11 +5,7 @@ body html{
 
   font-family: Neo Sans Arabic,Changa,Segoe UI;
 }
-.playerDiv {
-   
-    width:100%;
-    position: relative;
-  }
+
 
   .tit{
     font-weight: 500;
@@ -23,9 +19,7 @@ body html{
         /* background-color: black; */
         border-radius: 8px;
         background-color: rgb(255, 255, 255);
-        box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
-        -webkit-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
-        -moz-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
+      
         height: 19%;
         /* border-radius: 12px; */
         display: flex;
@@ -35,10 +29,7 @@ body html{
   .btndivfooter{
         /* background-color: black; */
         border-radius: 8px;
-        background-color: rgb(255, 255, 255);
-        box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
-        -webkit-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
-        -moz-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
+       
         height: 19%;
         /* border-radius: 12px; */
         display: flex;
@@ -55,11 +46,16 @@ body html{
   top: 20px;
 }
 .player{
-  height: auto;
+  height: 44vw;
   width: auto;
+  margin-top: 33px;
 
 }
-
+.playerDiv {
+  height: 482px;
+  width: 100%;
+  position: relative;
+}
 .playimg{
   width: 43px;
   cursor: pointer;
@@ -71,8 +67,7 @@ body html{
   top: -45px;
   background-color: #eda84c00;
   border-radius: 8px;
-  margin-left: 3%;
-  margin-right: 3%;
+ 
 }
 .imgscreen{
   cursor: pointer;
@@ -117,22 +112,24 @@ frontend\src\Lives\Livepage.css
     color: wheat;
     font-size: 11px;
   }
-  .livepage{
+  .blogpage{
 
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
-    margin-left: 3%;
-    margin-right: 3%;
+    
     box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
 -webkit-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
 -moz-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
   }
   .header{
     border-radius: 8px;
-    background-color: antiquewhite;
-    box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
-    -webkit-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
-    -moz-box-shadow: 3px 1px 11px 2px rgba(255,255,255,0.81);
+    background-color: rgb(255, 255, 255);
+    box-shadow :none;
+   
+  }
+
+  .artic{
+    text-align: center;
   }
 
 
@@ -180,4 +177,46 @@ frontend\src\Lives\Livepage.css
          margin-right: 10%;
 }
 
+}
+
+img{
+  height: auto;
+  width: 95%;
+}
+
+.artic{
+  background-color: white;
+}
+
+.socialmedia{    display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #eceef2;
+  
+    border-radius: 8px;
+    padding: 14px;
+}
+
+
+  .socialmediabtn {
+    /* position: relative; */
+    background-color: #4d0d96;
+    width: 29%;
+    height: 42px;
+    border-radius: 8px;
+    margin: 5px;
+    top: 20px;
+}
+.about{
+  
+  background-color: white;
+  border-radius: 9px;
+ 
+}
+
+.all{
+  background-color: rgb(217 217 217 / 93%);
+  box-shadow: 1px 1px 10px 3px rgba(255,255,255,0.75);
+  -webkit-box-shadow: 1px 1px 10px 3px rgba(255,255,255,0.75);
+  -moz-box-shadow: 1px 1px 10px 3px rgba(255,255,255,0.75);
 }

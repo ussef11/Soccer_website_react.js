@@ -99,7 +99,7 @@ class Texteditor extends Component {
         />
      
         <textarea
-          disabled
+          
  style={{color:"black"}}
           value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
           onChange={this.handleChange}
