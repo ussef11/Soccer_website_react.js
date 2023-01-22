@@ -9,7 +9,7 @@ const Delete = () => {
     const [deleted , setDeleted] = useState(false)
 
 
-const {Data:Blogs} =  useFetch('http://localhost:3001/getarticles')
+const {Data:Blogs} =  useFetch('https://soccer-data.vercel.app/getarticles')
 
 
 // const handleChange = (event) => {
@@ -107,7 +107,7 @@ if(deleted){
   
       
       <button  disabled={true} style={{backgroundColor:"gray"}}  class="app-content-headerButton">Update</button>
-      <button onClick={()=>{fetch(`http://localhost:3001/deletearticle/${blog.id_articles}`,{method:"POST"})
+      <button onClick={()=>{fetch(`https://soccer-data.vercel.app/deletearticle/${blog.id_articles}`,{method:"POST"})
   .then(response => response.text())
   .then(result =>{ console.log(result) ;
    setDeleted(true)})
