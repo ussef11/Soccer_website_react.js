@@ -21,7 +21,7 @@ const Livepage = () => {
   const {id} = useParams()
 const{hometeam} = useParams()
 const{awayteam} = useParams()
-const {Data:channel} = useFetch(`http://localhost:3001/GetChannel/${id}/${hometeam}/${awayteam}`)
+const {Data:channel} = useFetch(`https://soccer-data.vercel.app/GetChannel/${id}/${hometeam}/${awayteam}`)
   
 
   
