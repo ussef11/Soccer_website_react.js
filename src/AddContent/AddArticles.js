@@ -16,20 +16,20 @@ const AddArticles = () => {
   const [discription, setdiscription] = useState();
   const [articleimg, setarticleimg] = useState();
 
-  const { Data: id } = useFetch("http://localhost:3001/countArticles");
+  const { Data: id } = useFetch("https://soccer-data.vercel.app/countArticles");
 
   let id_articles = id + 1;
   const articles = { id_articles, title, creator, createdate , articleimg };
   const Submithandler = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3001/AddArticles", {
+    fetch("https://soccer-data.vercel.app/AddArticles", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(articles),
     })
       .then((res) => {
         console.log(res.text());
-        window.location.replace(`http://localhost:3000/AddContent/${id_articles}`)
+        window.location.replace(`https://soccer-data.vercel.app/AddContent/${id_articles}`)
       })
       .catch((err) => {
         console.log(err);
