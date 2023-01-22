@@ -102,7 +102,7 @@ handlegetcontent(e) {
    let data = {content,id_article,id_content}
 
   //  console.log(this.state.content , this.state.id)
-   fetch("http://localhost:3001/AddContent", {
+   fetch("https://soccer-data.vercel.app/AddContent", {
      method: "POST",
      headers: { "Content-Type": "application/json" },
 
