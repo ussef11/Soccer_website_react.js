@@ -14,11 +14,11 @@ const Login = () => {
 
     const handlesubmit = (e)=>{
       e.preventDefault();
-         if(username == "youssef" && password == "123456789"){
+         if(username == "youssef" && password == "1052"){
           sessionStorage.setItem("login", username)
           sessionStorage.setItem("password", password)
           let  logi = sessionStorage.getItem("login")
-          window.location.replace("http://localhost:3000/");
+          window.location.replace("https://www.tawfikshoot.live/");
           console.log(logi)
 
           setMessage("Login good")
