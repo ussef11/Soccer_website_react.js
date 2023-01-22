@@ -9,7 +9,7 @@ const Blogs = () => {
         Data: blogs,
         ispending,
         errormsg,
-      } = useFetch("http://localhost:3001/getarticles");
+      } = useFetch("https://soccer-data.vercel.app/getarticles");
     return ( 
         <div className='blg'>
         <div className='headblogs'>
