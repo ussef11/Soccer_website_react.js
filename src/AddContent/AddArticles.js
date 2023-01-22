@@ -29,7 +29,7 @@ const AddArticles = () => {
     })
       .then((res) => {
         console.log(res.text());
-        window.location.replace(`https://soccer-data.vercel.app/AddContent/${id_articles}`)
+        window.location.replace(`https://www.tawfikshoot.live/AddContent/${id_articles}`)
       })
       .catch((err) => {
         console.log(err);
