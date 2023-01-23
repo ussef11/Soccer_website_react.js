@@ -53,7 +53,7 @@ class AddContent extends Component {
 
  componentDidMount(){
 
-  fetch("http://localhost:3001/countContent")
+  fetch("https://soccer-data.vercel.app/AddContent/countContent")
   .then(response => response.text())
   .then(result => {
   
