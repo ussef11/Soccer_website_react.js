@@ -95,12 +95,13 @@ useEffect(()=>{
                 {/* <li> <Link className="a" to="/test">TEST</Link></li> */}
                 {showadminBoard &&   <li> <Link className="a" to="/add/">Add channel</Link></li> }  
                 {showadminBoard &&   <Link className="a" to="/AddArticles/">Add Articles</Link> }  
+                     {showadminBoard &&   <Link className="a" to="/DeleteArticle/"> Delete Articles</Link> }  
                 {/* <li> <Link className="a" to="/Live/">Live</Link></li> */}
                 { !showadminBoard &&   <li> <Link className="a" to="/Register/">Register</Link></li>}
                 { !showadminBoard &&   <li> <Link className="a" to="/Login/">Login <img style={{width:"23px",position:'relative' , top:'7px'}} src={logout} /> </Link></li> }
                 {showadminBoard && <li> <Link onClick={logoutSubmite} className="a" to="/">Logout <img src={login} style={{width:"23px",position:'relative' , top:'7px'}} /> </Link></li> }  
                 <li> <div className="search"> <input value={searchinput} onChange={(e)=>{setsearchinput(e.target.value)}} className="search" type="search"  /> <div className="searchicon"><button className="buttonSrearch" onClick={()=>{alert("shearch" + searchinput)}}><i class="fas fa-search"></i></button> </div>  </div> </li> 
-               
+              
                 
             </ul>
             
