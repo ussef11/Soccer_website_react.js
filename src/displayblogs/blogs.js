@@ -5,11 +5,18 @@ import { Link } from "react-router-dom";
 
 const Blogs = () => {
 
+
     const {
         Data: blogs,
         ispending,
         errormsg,
       } = useFetch("https://soccer-data.vercel.app/getarticles");
+
+      
+    const handleredirect = (id,title)=>{
+        window.location.href = `https://www.tawfikshoot.live/Blogpage/${id}/${title}`
+     
+    }
     return ( 
         <div className='blg'>
         <div className='headblogs'>
@@ -22,16 +29,17 @@ const Blogs = () => {
 
          <div className="blogs">
             { blogs && blogs.map((blog)=>( 
-  <Link to={`Blogpage/${blog.id_articles}/${blog.title}`}> <div className="blog">
-  <div className="divimg"> 
-  <img className='bolgimg' src={blog.articleimg} />
+  
+  <div className="blog">
+  <div  className="divimg"> 
+  <img style={{cursor:"pointer"}} onClick={()=>{ handleredirect(blog.id_articles,blog.title)}} className='bolgimg' src={blog.articleimg} />
   </div>
 
   <div className='title'>
-      <p className='ptitle'>{blog.title} </p>
+      <p  style={{cursor:"pointer"}}   onClick={()=>{ handleredirect(blog.id_articles,blog.title)}} className='ptitle'>{blog.title} </p>
   </div>
 </div>
-</Link> 
+
 
 ))}
              
