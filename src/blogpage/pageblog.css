@@ -12,8 +12,8 @@ body html{
     color: black;
     font-size: 20px;
     position: relative;
-    top: 32px;
-    font-family: system-ui;
+    top: 9px;
+   font-family: system-ui;
   }
   .btndiv{
         /* background-color: black; */
@@ -147,6 +147,7 @@ frontend\src\Lives\Livepage.css
 
   .tithead{
     text-align: end;
+       padding: 12px;
   }
 
   .r{
