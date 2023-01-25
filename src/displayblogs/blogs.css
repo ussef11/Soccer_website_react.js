@@ -42,8 +42,14 @@
     border-top: 13px;
     width: 276px;
     height: 193px;
-}
+    transition: transform .2s;
 
+}
+.bolgimg:hover{
+    -ms-transform: scale(1.02); /* IE 9 */
+    -webkit-transform: scale(1.02); /* Safari 3-8 */
+    transform: scale(1.02); 
+}
 .title{
     color: #2f2929;
     /* background-color: azure; */
@@ -58,7 +64,6 @@
 }
 
 .blogs{
-    
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -80,4 +85,6 @@
     padding: 2%;
     font-weight: 600;
 }
+
+
 
