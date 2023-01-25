@@ -1,9 +1,8 @@
 .titlehead{
 /*     justify-content: right; */
-    text-align: left;
     display: flex;
     background-color: #eceef2;
-        justify-content: left;
+        justify-content: center;
 }
 .blg{
     background-color: white;
