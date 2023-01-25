@@ -2,7 +2,6 @@ import React, { Component, useState } from 'react';
 import { EditorState ,convertToRaw,ContentState} from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import './AddContent.css'
-import '../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 import draftToHtml from 'draftjs-to-html';
 import htmlToDraft from 'html-to-draftjs';
 import { useParams } from 'react-router-dom';
@@ -53,7 +52,7 @@ class AddContent extends Component {
 
  componentDidMount(){
 
-  fetch("https://soccer-data.vercel.app/AddContent/countContent")
+  fetch("https://soccer-data.vercel.app/countContent")
   .then(response => response.text())
   .then(result => {
   
@@ -149,16 +148,18 @@ handlegetcontent(e) {
         />
         <form onSubmit={this.Onsubmithandler} method='POST'>
         <textarea
-          
+        
+        length="120"
  style={{color:"black"}}
           value={draftToHtml(convertToRaw(editorState.getCurrentContent()))}
           onChange={this.handleChange}
         />
         {/* <input hidden type="number" onClick={this.handleidarticle} value={id} /> */}
         {/* <input hidden type="number" onClick={this.handleidcontent} value={id_content} /> */}
-        <i className='getcontenti' onClick={this.handlegetcontent}>Get Content</i>
-
-        <input type="submit" value="submit"/>
+      <div className='idiv'>  <i className='getcontenti' onClick={this.handlegetcontent}>Get Content</i></div> 
+        <div className='submitdiv'> 
+<input className='btnsub' type="submit" value="submit"/></div>
+        
         </form>
       </div>
     )
