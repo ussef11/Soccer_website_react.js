@@ -81,6 +81,8 @@ useEffect(()=>{
                 {/* <Link className="a" to="/test">TEST</Link> */}
                 {showadminBoard &&   <Link className="a" to="/add/">Add channel</Link> }  
                 {showadminBoard &&   <Link className="a" to="/AddArticles/">Add Articles</Link> }  
+                                      {showadminBoard &&   <Link className="a" to="/DeleteArticle/"> Delete Articles</Link> }  
+
                 {/* <Link className="a" to="/Live/">Live</Link> */}
                 { !showadminBoard &&        <Link className="a" to="/Register/">Register</Link>}
                 { !showadminBoard &&   <Link className="a" to="/Login/">Login</Link> }
