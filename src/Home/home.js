@@ -32,11 +32,11 @@ const HomePage = () => {
 
   let lista = ["red","rgb(73, 62, 62)","red","rgb(73, 62, 62)"]
 
-  setInterval(()=>{
+//   setInterval(()=>{
 
-      setcolor(prev => prev == lista.length -1 ? 0 : prev+1) 
-  },2500)
-
+//       setcolor(prev => prev == lista.length -1 ? 0 : prev+1) 
+//   },2500)
+ setcolor(prev => prev == lista.length -1 ? 0 : prev+1) 
 
   return (
     <div className="home">
@@ -78,10 +78,10 @@ const HomePage = () => {
                       <img className="lineimg" src={line} />
                     </div>
 
-                    <div  className="livefin"  style={{backgroundColor:`${lista[color]}`}}>
+                    <div  className="livefin"  style={{backgroundColor:"red"}}>
                   {/* //SSSSSSSSSSSSSS */}
                        
-                        <span className="minstarta"> {data.match_status}'</span>
+                        <span className="minstarta" style={{color:"#fff"}}> {data.match_status}'</span>
                     
                     </div>
                     <div className="score">
